@@ -39,18 +39,14 @@ public class GradesAdapter extends ArrayAdapter<GradeModel>
             TextView gradeName = (TextView)view.findViewById(R.id.gradeName);
             gradeName.setText(currentGrade.getName()); //Przypisanie nazwy pobranej z modelu do etykiety
             radioGroup.check(R.id.grade2);
-            //currentGrade.setGrade(2);
             radioGroup.setOnCheckedChangeListener(
                     new RadioGroup.OnCheckedChangeListener()
                     {
                         @Override
-                        public void onCheckedChanged(RadioGroup group, //referencja do grupy
-                                                     //przyciskĂłw
-                                                     int checkedId) //identyfikator wybranego
-                        //przycisku
+                        public void onCheckedChanged(RadioGroup group, //referencja do grupy przyciskĂłw
+                                                     int checkedId) //identyfikator wybranego przycisku
                         {
-                            // 1) odczytanie z etykiety, ktĂłry obiekt modelu przechowuje dane o
-                            //zmienionej ocenie
+                            //odczytanie z etykiety, ktory obiekt modelu przechowuje dane o zmienionej ocenie
                             if (checkedId == R.id.grade2)
                             {
                                 currentGrade.setGrade(2);
@@ -67,22 +63,15 @@ public class GradesAdapter extends ArrayAdapter<GradeModel>
                             {
                                 currentGrade.setGrade(5);
                             }
-
-                            // 2) zapisanie zmienionej oceny
-
                         }
                     }
             );
-            //powiÄ…zanie grupy przyciskĂłw z obiektem w modelu
         }
         //aktualizacja istniejÄ…cego wiersza
         else
         {
             view = oldView;
             RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
-            //powiÄ…zanie grupy przyciskĂłw z obiektem w modelu
-             ///grupaOceny.setTag(gradesList.get(numerWiersza));
-
         }
 
         TextView gradeName = (TextView) view.findViewById(R.id.gradeName);
